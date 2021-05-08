@@ -1,10 +1,12 @@
 FROM ruby:alpine
 MAINTAINER Andreas Roth <andreas.roth@fastprotect.net>
 
-RUN apk add --no-cache libxml2 libxslt build-base libxml2-dev libxslt-dev && \
+RUN apk add --no-cache libxml2 libxslt build-base libxml2-dev libxslt-dev git && \
     gem install git-commit-notifier && \
     apk del --no-cache build-base libxml2-dev libxslt-dev && \
-    adduser --system --shell /bin/false git
+    addgroup -S git && \
+    adduser --system --shell /bin/false git git
 
 USER git
-WORKDIR /
+WORKDIR /git
+ENTRYPOINT ["/usr/local/bundle/bin/git-commit-notifier", "/git/git-commit-notifier.yml"]
