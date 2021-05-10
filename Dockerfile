@@ -9,4 +9,4 @@ RUN apk add --no-cache libxml2 libxslt build-base libxml2-dev libxslt-dev git &&
 
 USER git
 WORKDIR /git
-ENTRYPOINT ["/usr/local/bundle/bin/git-commit-notifier", "/git/git-commit-notifier.yml"]
+ENTRYPOINT ["/usr/local/bundle/bin/git-commit-notifier"]

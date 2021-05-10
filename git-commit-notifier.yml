@@ -1,0 +1,23 @@
+delivery_method: debug
+expand_css: false
+from: dev@example.com
+email_recipients:
+- git@example.net
+mailinglist:
+- mails@example.net
+ignore_merge: false
+ignore_whitespace: true
+lines_per_diff: 200
+link_files: trac
+message_integration: ''
+prefer_git_config_mailinglist: false
+reply_to_author: false
+send_mail_to_committer: false
+show_master_branch_name: false
+show_summary: true
+skip_commits_older_than: 7
+too_many_files: 10
+unique_commits_per_branch: false
+debug:
+    enabled: true
+    log_directory: /git
