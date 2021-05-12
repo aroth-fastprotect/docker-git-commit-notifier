@@ -13,6 +13,6 @@ touch git-commit-notifier.log
 chmod 666 git-commit-notifier.log
 #chown 1000.1000 git-commit-notifier.log
 echo "HEAD^1 HEAD refs/heads/master" | \
-    docker run --rm -i --user "$REPO_UID:$REPO_GID" -v `readlink -f .`:/git \
+    docker run --rm -i --user "$REPO_UID:$REPO_GID" -v "$REPO_DIR:/git" \
     rothan/docker-git-commit-notifier:latest \
     "/git/git-commit-notifier.yml"
